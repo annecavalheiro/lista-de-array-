@@ -1,0 +1,61 @@
+#include <stdio.h>
+
+int main()
+{
+    // declaracao de variaveis
+    int A[11] = {2, 5, 8, 12, 15, 20, 18, 14, 10, 6, 1};
+    int B[11];
+    int i = 0;
+    int j = 10;
+    int k = 0;
+    int idx;
+
+    // processamento
+    while (i <= 5 && j >= 6)
+    {
+        if (A[i] <= A[j])
+        {
+            B[k] = A[i];
+            i++;
+        }
+        else
+        {
+            B[k] = A[j];
+            j--;
+        }
+
+        k++;
+    }
+
+    while (i <= 5)
+    {
+        B[k] = A[i];
+        i++;
+        k++;
+    }
+
+    while (j >= 6)
+    {
+        B[k] = A[j];
+        j--;
+        k++;
+    }
+
+    // copia para A
+    for (idx = 0; idx < 11; idx++)
+    {
+        A[idx] = B[idx];
+    }
+
+    // saida
+    printf("Vetor ordenado: ");
+
+    for (idx = 0; idx < 11; idx++)
+    {
+        printf("%d ", A[idx]);
+    }
+
+    printf("\n");
+
+    return 0;
+}
