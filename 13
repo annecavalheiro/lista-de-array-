@@ -1,0 +1,135 @@
+#include <stdio.h>
+
+int main()
+{
+    // declaracao de constantes
+    const int TAM = 5;
+
+    // declaracao de variaveis
+    int X[TAM], Y[TAM];
+    int soma[TAM], produto[TAM];
+    int diferenca[TAM], intersecao[TAM];
+    int uniao[TAM * 2];
+
+    int qtd_dif = 0;
+    int qtd_inter = 0;
+    int qtd_uniao = 0;
+    int i, j;
+    int existe;
+
+    // entrada
+    printf("Digite os 5 elementos de X:\n");
+
+    for (i = 0; i < TAM; i++)
+    {
+        printf("X[%d]: ", i);
+        scanf("%d", &X[i]);
+    }
+
+    printf("\nDigite os 5 elementos de Y:\n");
+
+    for (i = 0; i < TAM; i++)
+    {
+        printf("Y[%d]: ", i);
+        scanf("%d", &Y[i]);
+    }
+
+    // soma e produto
+    for (i = 0; i < TAM; i++)
+    {
+        soma[i] = X[i] + Y[i];
+        produto[i] = X[i] * Y[i];
+    }
+
+    // diferenca
+    for (i = 0; i < TAM; i++)
+    {
+        existe = 0;
+
+        for (j = 0; j < TAM; j++)
+        {
+            if (X[i] == Y[j])
+            {
+                existe = 1;
+                break;
+            }
+        }
+
+        if (existe == 0)
+        {
+            diferenca[qtd_dif] = X[i];
+            qtd_dif++;
+        }
+    }
+
+    // intersecao
+    for (i = 0; i < TAM; i++)
+    {
+        for (j = 0; j < TAM; j++)
+        {
+            if (X[i] == Y[j])
+            {
+                intersecao[qtd_inter] = X[i];
+                qtd_inter++;
+                break;
+            }
+        }
+    }
+
+    // uniao
+    for (i = 0; i < TAM; i++)
+    {
+        uniao[qtd_uniao] = X[i];
+        qtd_uniao++;
+    }
+
+    for (i = 0; i < TAM; i++)
+    {
+        existe = 0;
+
+        for (j = 0; j < TAM; j++)
+        {
+            if (Y[i] == X[j])
+            {
+                existe = 1;
+                break;
+            }
+        }
+
+        if (existe == 0)
+        {
+            uniao[qtd_uniao] = Y[i];
+            qtd_uniao++;
+        }
+    }
+
+    // saida
+    printf("\nSoma: ");
+
+    for (i = 0; i < TAM; i++)
+        printf("%d ", soma[i]);
+
+    printf("\nProduto: ");
+
+    for (i = 0; i < TAM; i++)
+        printf("%d ", produto[i]);
+
+    printf("\nDiferenca: ");
+
+    for (i = 0; i < qtd_dif; i++)
+        printf("%d ", diferenca[i]);
+
+    printf("\nIntersecao: ");
+
+    for (i = 0; i < qtd_inter; i++)
+        printf("%d ", intersecao[i]);
+
+    printf("\nUniao: ");
+
+    for (i = 0; i < qtd_uniao; i++)
+        printf("%d ", uniao[i]);
+
+    printf("\n");
+
+    return 0;
+}
