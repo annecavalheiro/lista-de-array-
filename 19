@@ -1,0 +1,62 @@
+#include <stdio.h>
+
+int main()
+{
+    // declaracao de constantes
+    const int TAM = 20;
+
+    // declaracao de variaveis
+    float X[TAM], Y[TAM];
+    float produto = 0;
+    int n;
+    int i;
+
+    // entrada
+    do
+    {
+        printf("Digite a quantidade de elementos (1 a 20): ");
+        scanf("%d", &n);
+
+    } while (n < 1 || n > TAM);
+
+    printf("\nVetor X:\n");
+
+    for (i = 0; i < n; i++)
+    {
+        printf("X[%d]: ", i);
+        scanf("%f", &X[i]);
+    }
+
+    printf("\nVetor Y:\n");
+
+    for (i = 0; i < n; i++)
+    {
+        printf("Y[%d]: ", i);
+        scanf("%f", &Y[i]);
+    }
+
+    // processamento
+    for (i = 0; i < n; i++)
+    {
+        produto = produto + X[i] * Y[i];
+    }
+
+    // saida
+    printf("\nVetor X: ");
+
+    for (i = 0; i < n; i++)
+    {
+        printf("%.2f ", X[i]);
+    }
+
+    printf("\nVetor Y: ");
+
+    for (i = 0; i < n; i++)
+    {
+        printf("%.2f ", Y[i]);
+    }
+
+    printf("\nProduto escalar: %.2f\n", produto);
+
+    return 0;
+}
