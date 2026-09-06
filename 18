@@ -1,0 +1,56 @@
+#include <stdio.h>
+
+int main()
+{
+    // declaracao de constantes
+    const int TAM = 10;
+
+    // declaracao de variaveis
+    int numero;
+    int numMaior, numMenor;
+    float altura;
+    float maior, menor;
+    int i;
+
+    // entrada
+    for (i = 0; i < TAM; i++)
+    {
+        printf("\nAluno %d\n", i + 1);
+
+        printf("Numero do aluno: ");
+        scanf("%d", &numero);
+
+        printf("Altura: ");
+        scanf("%f", &altura);
+
+        // processamento
+        if (i == 0)
+        {
+            maior = altura;
+            menor = altura;
+
+            numMaior = numero;
+            numMenor = numero;
+        }
+        else
+        {
+            if (altura > maior)
+            {
+                maior = altura;
+                numMaior = numero;
+            }
+
+            if (altura < menor)
+            {
+                menor = altura;
+                numMenor = numero;
+            }
+        }
+    }
+
+    // saida
+    printf("\nAluno mais alto: %d - %.2f m\n", numMaior, maior);
+    printf("Aluno mais baixo: %d - %.2f m\n", numMenor, menor);
+
+    return 0;
+}
