@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+int main()
+{
+    // declaracao de constantes
+    const int TAM = 20;
+
+    // declaracao de variaveis
+    int vetor[TAM];
+    int i, j;
+    int jaApareceu;
+
+    // entrada
+    printf("Digite 20 numeros inteiros:\n");
+
+    for (i = 0; i < TAM; i++)
+    {
+        printf("Posicao %d: ", i);
+        scanf("%d", &vetor[i]);
+    }
+
+    // processamento e saida
+    printf("\nVetor sem elementos repetidos:\n");
+
+    for (i = 0; i < TAM; i++)
+    {
+        jaApareceu = 0;
+
+        for (j = 0; j < i; j++)
+        {
+            if (vetor[i] == vetor[j])
+            {
+                jaApareceu = 1;
+                break;
+            }
+        }
+
+        if (jaApareceu == 0)
+        {
+            printf("%d ", vetor[i]);
+        }
+    }
+
+    printf("\n");
+
+    return 0;
+}
