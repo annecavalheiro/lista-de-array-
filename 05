@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main()
+{
+    // declaracao de constantes
+    const int TAM = 15;
+
+    // declaracao de variaveis
+    float notas[15];
+    float soma = 0.0;
+    float media;
+    int i;
+
+    // entrada
+    for (i = 0; i < TAM; i++)
+    {
+        do
+        {
+            printf("Nota do aluno %d: ", i + 1);
+            scanf("%f", &notas[i]);
+
+        } while (notas[i] < 0 || notas[i] > 10);
+    }
+
+    // processamento
+    for (i = 0; i < TAM; i++)
+    {
+        soma = soma + notas[i];
+    }
+
+    media = soma / TAM;
+
+    // saida
+    printf("\nMedia geral da turma: %.2f\n", media);
+
+    return 0;
+}
