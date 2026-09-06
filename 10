@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main()
+{
+    // declaracao de variaveis
+    float num;
+    float maior;
+    int primeiro = 1;
+
+    // entrada
+    printf("Digite numeros reais (0 para encerrar):\n");
+
+    // repeticao
+    while (1)
+    {
+        printf("Digite um numero: ");
+        scanf("%f", &num);
+
+        if (num == 0)
+            break;
+
+        // processamento
+        if (primeiro == 1 || num > maior)
+        {
+            maior = num;
+            primeiro = 0;
+        }
+    }
+
+    // saida
+    if (primeiro == 1)
+        printf("\nNenhum numero foi digitado.\n");
+    else
+        printf("\nMaior numero: %.2f\n", maior);
+
+    return 0;
+} 
