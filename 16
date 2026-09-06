@@ -1,0 +1,58 @@
+#include <stdio.h>
+
+int main()
+{
+    // declaracao de constantes
+    const int TAM = 10;
+
+    // declaracao de variaveis
+    int vetor[TAM];
+    int qtd = 0;
+    int num;
+    int i;
+    int jaExiste;
+
+    // entrada
+    printf("Digite 10 numeros inteiros diferentes:\n");
+
+    while (qtd < TAM)
+    {
+        printf("Digite o %d numero: ", qtd + 1);
+        scanf("%d", &num);
+
+        jaExiste = 0;
+
+        // verifica se o numero ja existe
+        for (i = 0; i < qtd; i++)
+        {
+            if (vetor[i] == num)
+            {
+                jaExiste = 1;
+                break;
+            }
+        }
+
+        // coloca no vetor se nao existir
+        if (jaExiste == 0)
+        {
+            vetor[qtd] = num;
+            qtd++;
+        }
+        else
+        {
+            printf("Numero ja digitado! Digite outro.\n");
+        }
+    }
+
+    // saida
+    printf("\nVetor final:\n");
+
+    for (i = 0; i < TAM; i++)
+    {
+        printf("%d ", vetor[i]);
+    }
+
+    printf("\n");
+
+    return 0;
+}
