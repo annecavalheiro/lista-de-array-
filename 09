@@ -1,0 +1,62 @@
+#include <stdio.h>
+
+int main()
+{
+    // declaracao de constantes
+    const int TAM = 5;
+
+    // declaracao de variaveis
+    float vetor[TAM];
+    int codigo;
+    int i;
+
+    // entrada
+    printf("Digite 5 numeros reais:\n");
+
+    for (i = 0; i < TAM; i++)
+    {
+        printf("Posicao %d: ", i);
+        scanf("%f", &vetor[i]);
+    }
+
+    printf("\n0 - Finalizar\n");
+    printf("1 - Ordem direta\n");
+    printf("2 - Ordem inversa\n");
+    printf("Opcao: ");
+    scanf("%d", &codigo);
+
+    // processamento e saida
+    switch (codigo)
+    {
+        case 0:
+            printf("Programa finalizado.\n");
+            break;
+
+        case 1:
+            printf("Vetor na ordem direta:\n");
+
+            for (i = 0; i < TAM; i++)
+            {
+                printf("%.2f ", vetor[i]);
+            }
+
+            printf("\n");
+            break;
+
+        case 2:
+            printf("Vetor na ordem inversa:\n");
+
+            for (i = TAM - 1; i >= 0; i--)
+            {
+                printf("%.2f ", vetor[i]);
+            }
+
+            printf("\n");
+            break;
+
+        default:
+            printf("Codigo invalido!\n");
+    }
+
+    return 0;
+}
