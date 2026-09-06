@@ -1,0 +1,56 @@
+#include <stdio.h>
+
+int main()
+{
+    // declaracao de constantes
+    const int TAM = 10;
+
+    // declaracao de variaveis
+    int v[TAM], v1[TAM], v2[TAM];
+    int qtd_v1 = 0;
+    int qtd_v2 = 0;
+    int i;
+
+    // entrada
+    printf("Digite 10 numeros inteiros:\n");
+
+    for (i = 0; i < TAM; i++)
+    {
+        printf("Posicao %d: ", i);
+        scanf("%d", &v[i]);
+    }
+
+    // processamento
+    for (i = 0; i < TAM; i++)
+    {
+        if (v[i] % 2 != 0)
+        {
+            v1[qtd_v1] = v[i];
+            qtd_v1++;
+        }
+        else
+        {
+            v2[qtd_v2] = v[i];
+            qtd_v2++;
+        }
+    }
+
+    // saida
+    printf("\nVetor de impares: ");
+
+    for (i = 0; i < qtd_v1; i++)
+    {
+        printf("%d ", v1[i]);
+    }
+
+    printf("\nVetor de pares: ");
+
+    for (i = 0; i < qtd_v2; i++)
+    {
+        printf("%d ", v2[i]);
+    }
+
+    printf("\n");
+
+    return 0;
+}
