@@ -1,0 +1,45 @@
+#include <stdio.h>
+
+int main()
+{
+    // declaracao de constantes
+    const int TAM = 10;
+
+    // declaracao de variaveis
+    int A[TAM], B[TAM], C[TAM];
+    int i;
+
+    // entrada do vetor A
+    printf("--- Vetor A ---\n");
+
+    for (i = 0; i < TAM; i++)
+    {
+        printf("Digite A[%d]: ", i);
+        scanf("%d", &A[i]);
+    }
+
+    // entrada do vetor B
+    printf("\n--- Vetor B ---\n");
+
+    for (i = 0; i < TAM; i++)
+    {
+        printf("Digite B[%d]: ", i);
+        scanf("%d", &B[i]);
+    }
+
+    // processamento
+    for (i = 0; i < TAM; i++)
+    {
+        C[i] = A[i] - B[i];
+    }
+
+    // saida
+    printf("\n--- Vetor C ---\n");
+
+    for (i = 0; i < TAM; i++)
+    {
+        printf("C[%d] = %d\n", i, C[i]);
+    }
+
+    return 0;
+}
